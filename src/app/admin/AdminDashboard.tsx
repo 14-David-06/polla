@@ -221,13 +221,7 @@ export default function AdminDashboard({ matches: initialMatches }: Props) {
               No hay partidos. Crea el primero.
             </div>
           ) : (
-            <div style={{
-              background: "#fff",
-              border: "1px solid var(--linea)",
-              borderRadius: 14,
-              overflow: "hidden",
-              boxShadow: "0 1px 4px rgba(10,14,26,.06)",
-            }}>
+            <div className="admin-table-wrap" style={{ background: "#fff" }}>
               <table style={{ width: "100%", borderCollapse: "collapse", fontSize: 13 }}>
                 <thead>
                   <tr style={{ background: "var(--azul)" }}>
@@ -541,7 +535,7 @@ function MatchForm({ title, initial, onCancel, action, onSuccess }: MatchFormPro
         </h3>
       </div>
 
-      <form action={formAction} style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 14 }}>
+      <form action={formAction} className="admin-form-grid">
         <div>
           <label className="polla-label" htmlFor="f-rival">Rival</label>
           <input id="f-rival" name="Rival" defaultValue={initial?.Rival}

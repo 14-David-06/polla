@@ -17,12 +17,13 @@ export default async function AdminPage() {
       <nav style={{
         background: "var(--azul)",
         color: "#fff",
-        padding: "12px 20px",
+        padding: "12px 16px",
         display: "flex",
         alignItems: "center",
         justifyContent: "space-between",
+        gap: 8,
       }}>
-        <div style={{ display: "flex", alignItems: "center", gap: 8 }}>
+        <div style={{ display: "flex", alignItems: "center", gap: 8, minWidth: 0 }}>
           <span style={{
             fontFamily: "var(--font-display)",
             fontWeight: 400,
@@ -30,13 +31,14 @@ export default async function AdminPage() {
             textTransform: "uppercase",
             color: "var(--amarillo)",
             letterSpacing: ".5px",
+            whiteSpace: "nowrap",
           }}>
             Polla Tricolor
           </span>
-          <span style={{ color: "rgba(255,255,255,.4)", fontSize: 12 }}>· Admin</span>
+          <span style={{ color: "rgba(255,255,255,.4)", fontSize: 12, whiteSpace: "nowrap" }}>· Admin</span>
         </div>
-        <div style={{ display: "flex", alignItems: "center", gap: 12 }}>
-          <span style={{ color: "rgba(255,255,255,.6)", fontSize: 12 }}>
+        <div style={{ display: "flex", alignItems: "center", gap: 10, flexShrink: 0 }}>
+          <span className="admin-nav-name" style={{ color: "rgba(255,255,255,.6)", fontSize: 12 }}>
             {session.user?.name ?? session.user?.email}
           </span>
           <form action={logoutAction}>
@@ -58,9 +60,9 @@ export default async function AdminPage() {
         </div>
       </nav>
 
-      <main style={{ maxWidth: 900, margin: "0 auto", padding: "24px 16px" }}>
+      <main className="admin-main" style={{ maxWidth: 900, margin: "0 auto", padding: "24px 16px" }}>
         <div style={{ marginBottom: 20 }}>
-          <h1 style={{
+          <h1 className="admin-title" style={{
             fontFamily: "var(--font-display)",
             fontWeight: 400,
             fontSize: 28,
