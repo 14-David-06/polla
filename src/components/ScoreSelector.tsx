@@ -146,6 +146,15 @@ export default function ScoreSelector({
         >
           {pending ? "Guardando…" : hasPick ? "Actualizar mi marcador" : "Guardar mi marcador"}
         </button>
+
+        {hasPick && (
+          <p style={{
+            marginTop: 8, textAlign: "center", fontSize: 11,
+            color: "rgba(255,255,255,.45)", position: "relative", zIndex: 1,
+          }}>
+            Se tomará el último pronóstico realizado.
+          </p>
+        )}
       </div>
 
       {error && (
